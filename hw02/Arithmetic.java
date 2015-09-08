@@ -95,7 +95,7 @@ totalCost$=(totalSockCost$+totalGlassCost$+totalEnvelopeCost$)*100;
 totalTax$=(taxSocks$+taxGlass$+taxEnvelope$)*100;
     totalTax$=(int)totalTax$/100.0;
 totalCostTax$=(totalCost$+totalTax$)*100;
-    totalCostTax$=(int)totalCostTax$/100.0000000;
+    totalCostTax$=(int)totalCostTax$/100.0;
 
 //Print the total cost before taxes, total tax, and total cost after taxes:
 System.out.println("The total cost of all items before sales tax is $" +totalCost$ +".");
