@@ -5,7 +5,7 @@
 //Poker Hand Check Program
 
 //Program should:
-//Randomly drew five cards, each from a different shuffled deck
+//Randomly draw five cards, each from a different shuffled deck
 //Detect whether the five cards contain a pair, two pair, or three of a kind
 //If none of these special hands exist, report that you have a "high card hand"
 //Simulate the drawing of the cards with randomly assigned variables
