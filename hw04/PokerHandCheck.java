@@ -252,34 +252,34 @@ int pair = 0;       //counts the number of pairs
 //use an if statement to determine if the strings of each card value are equal
 //if the strings are equal, it adds one to the integer that counts pairs
 if (cardValue1.equals(cardValue2)) {
-    pair = pair + 1;
+    pair++;
 }
 if (cardValue1.equals(cardValue3)) {
-    pair = pair + 1;
+    pair++;
 }
 if (cardValue1.equals(cardValue4)) {
-    pair = pair + 1;
+    pair++;
 }    
 if (cardValue1.equals(cardValue5)) {
-    pair = pair + 1;
+    pair++;
 }
 if (cardValue2.equals(cardValue3)) {
-    pair = pair + 1;
+    pair++;
 }    
 if (cardValue2.equals(cardValue4)) {
-    pair = pair + 1;
+    pair++;
 }    
 if (cardValue2.equals(cardValue5)) {
-    pair = pair + 1;
+    pair++;
 }
 if (cardValue3.equals(cardValue4)) {
-    pair = pair + 1;
+    pair++;
 }
 if (cardValue3.equals(cardValue5)) {
-    pair = pair + 1;
+    pair++;
 }
 if (cardValue4.equals(cardValue5)) {
-    pair = pair + 1;
+    pair++;
 }
 
 //use a switch so that one and two pairs have different cases that print different results
