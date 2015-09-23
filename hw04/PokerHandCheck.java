@@ -10,10 +10,39 @@
 //If none of these special hands exist, report that you have a "high card hand"
 //Simulate the drawing of the cards with randomly assigned variables
 
+//import java.util.Scanner;
+    //imported the scanner class so I can check card values myself while coding
+
 public class PokerHandCheck{
     //main method required for every Java program
     public static void main(String [] args) {
 
+//This next part was used to test card values of my own input, so I could more easily find bugs. I removed it afterwards:        
+//Scanner myScanner = new Scanner( System.in );
+    //declares an instance of the Scanner object and call the Scanner constructor
+    //tells Scanner that an instance is being created and will take input from STDIN
+    
+//System.out.print("Enter the value of the first card. ");
+    //prompts the user for the card
+    //note: because there is no ln, the cursor will not go to the next line after printing this
+//String cardValue1 = myScanner.nextString();
+    //calls a method that Scanner objects have - "nextString()" method
+    //can only be accessed by telling Java that a method part of myScanner object is needed
+
+//System.out.print("Enter the value of the second card. ");
+//String cardValue2 = myScanner.nextString();    
+
+//System.out.print("Enter the value of the third card. ");
+//String cardValue3 = myScanner.nextString();  
+
+//System.out.print("Enter the value of the fourth card. ");
+//String cardValue4 = myScanner.nextString();  
+
+//System.out.print("Enter the value of the fifth card. ");
+//String cardValue5 = myScanner.nextString();
+
+
+//Now for the part of the code that randomly draws five cards:
 //Card 1:    
 //Declare variables:
 String cardValue1 = ""; //card number or name
