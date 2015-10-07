@@ -33,6 +33,7 @@ public class CheckDigit{
     while (barcode.length() != 10) {
         System.out.print("This is a valid NOT a valid ISBN. Please enter 10 digits: ");
         barcode = myScanner.next();
+        //if the barcode length is anything other than 10 digits, it will print an error message and prompt again
     }    
     
     //now to declare two strings, one for the first 9 digits, and the other for the last digit:
