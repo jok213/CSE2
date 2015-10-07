@@ -56,10 +56,10 @@ public class CheckDigit{
             //this occurs with the leftmost integer
         }
         else{
-            barcode2 = barcode2/10;     //takes the nine digits and divides by 10, truncating a digit
+            barcode2 = barcode2 / 10;   //takes the nine digits and divides by 10, truncating a digit
             barcode2 = carrier;         //sets what's left equal to carrier, one of the extra variables
-            barcode2 = barcode2*10;     //multipies it back by 10 after storing the carrier value
-            barcode2 = barcode2+10;     //add 10
+            barcode2 = barcode2 * 10;   //multipies it back by 10 after storing the carrier value
+            barcode2 = barcode2 + 10;   //add 10
             holder = barcode2-barcode1;
             holder = 10-holder;
             //gets the value of the rightmost integer in the number
