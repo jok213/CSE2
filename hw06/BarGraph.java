@@ -34,19 +34,21 @@ boolean notMon = true;
 System.out.print("Expenses for Monday:    $");
 //create a while loop that checks if the input is a positive double:
 while (notMon) {
-        if (myScanner.hasNextDouble() == false){
+        if (myScanner.hasNextDouble() == false){ //checks if the input contains a double
         System.out.print("Sorry, you did not enter an integer. Try again: $");
-        myScanner.next();
-        continue;
+            //if it doesn't contain a double, it prompts for another input
+        myScanner.next(); //accepts the input
+        continue; //if the argument at the beginning of this if statement was false, it will go back to the beginning of the loop now
         }
-        Monday = myScanner.nextDouble();
-        if (Monday < 0){
-        System.out.print("Please only enter positive numbers. Try again: $");
-        continue;
+        Monday = myScanner.nextDouble(); //stores the double value in Monday
+        if (Monday < 0){ //checks if the double is negative (less than zero)
+        System.out.print("Please only enter positive numbers. Try again: $"); //if negative, it will prompt again
+        continue; //if negative, after prompting, it goes back to the beginning of the loop
         }
-    notMon = false;
+    notMon = false; //if all of the above conditions are met, the boolean changes to false, and the loop is exited
 }
 
+//same thing is done for the rest of the days of the week:
 boolean notTues = true;    
 System.out.print("Expenses for Tuesday:   $");
 while (notTues) {
@@ -143,7 +145,7 @@ while (notSun) {
     notSun = false;
 }
  
-
+//declare strings that will eventually print the asterisks of the bar graph:
 String mondayExpense = "";
 String tuesdayExpense = "";
 String wednesdayExpense = "";
@@ -152,11 +154,14 @@ String fridayExpense = "";
 String saturdayExpense = "";
 String sundayExpense = "";
 
+//declare a counter for the for loop:
 int mondayCount = 1;
-for (mondayCount = 1; mondayCount <= Math.round(Monday); mondayCount++){
-    mondayExpense = mondayExpense + "*";
+//this for loop will generate asterisks equal to the rounded value of the expense:
+for (mondayCount = 1; mondayCount <= Math.round(Monday); mondayCount++){ //counter runs until it equals the rounded expense
+    mondayExpense = mondayExpense + "*"; //adds the asterisk
 }
 
+//the same thing is done for the other days of the week:
 int tuesdayCount = 1;
 for (tuesdayCount = 1; tuesdayCount <= Math.round(Tuesday); tuesdayCount++){
     tuesdayExpense = tuesdayExpense + "*";
@@ -187,6 +192,7 @@ for (sundayCount = 1; sundayCount <= Math.round(Sunday); sundayCount++){
     sundayExpense = sundayExpense + "*";
 }
 
+//now to print the asterisks of the bar graph:
 System.out.println("Mon:  " + mondayExpense);
 System.out.println("Tues: " + tuesdayExpense);
 System.out.println("Wed:  " + wednesdayExpense);
@@ -195,19 +201,23 @@ System.out.println("Fri:  " + fridayExpense);
 System.out.println("Sat:  " + saturdayExpense);
 System.out.println("Sun:  " + sundayExpense);
 
+//to calculate the average, add the expenses from each day and then divide by seven
 double average;
 average = ((Monday + Tuesday + Wednesday + Thursday + Friday + Saturday + Sunday) / 7 ) * 100;
-    average = (int)average / 100.0;
-System.out.println("Your average weekly expenses are: $" + average);
+    average = (int)average / 100.0; //multiplying by 100, converting to an integer, and dividing by 100.0 makes sure the average has two decimal places
+System.out.println("Your average weekly expenses are: $" + average); //prints the average
 
+//now to create a for loop that calulates the total over four years:
+//declare variables to count the weeks and one to store the total amount
 int weekCount = 1;
 double weekly = 0;
-for (weekCount = 1; weekCount <= 208; weekCount++){
-    weekly =( weekly + (((Math.random()*0.40)+0.81)*average) );
+for (weekCount = 1; weekCount <= 208; weekCount++){ //the for loop runs from week 1 to week 208, which is four years
+    weekly =( weekly + (((Math.random()*0.40)+0.81)*average) ); //each time it runs, the average amount per week is multiplied somewhere between .8 to 1.2, a 20% decrease or increase
 }
 weekly = weekly * 100;
-    weekly = (int)weekly / 100.0;
+    weekly = (int)weekly / 100.0; //multiplying by 100, converting to an int, and dividing by 100.0 guarantees two decimal places
 
+//now to print the output:
 System.out.println("Estimated expenditure for 4 years: $" + weekly);
 
     }  //end of main method
