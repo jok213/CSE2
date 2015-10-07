@@ -31,7 +31,7 @@ public class CheckDigit{
         //can only be accessed by telling Java that a method part of myScanner object is needed
         //to accept a string, next() method of the Scanner object will be used
     while (barcode.length() != 10) {
-        System.out.print("This is a valid NOT a valid ISBN. Please enter 10 digits: ");
+        System.out.print("This is NOT a valid ISBN. Please enter 10 digits: ");
         barcode = myScanner.next();
         //if the barcode length is anything other than 10 digits, it will print an error message and prompt again
     }    
