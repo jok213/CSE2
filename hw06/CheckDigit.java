@@ -46,7 +46,7 @@ public class CheckDigit{
     int carrier = 0;         //carrier is an extra variable that will help later
     int holder = 0;          //holder gets the value of the rightmost integer in the number
     int sum = 0;             //the sum achieved at the end is declared at zero
-    int multiChar = 0;       //multiChar will convert the X value to 10
+    int multiChar = 0;       //multiChar will convert the X value to 10 and hold the rest of the check digit integers
     for (int i = 2; i >= 10; i++){ //guarantees that the loop will only run 9 times
         barcode2 = barcode1;   //stores the extra variable that comes in handy in a bit
         if(barcode1 < 10){
@@ -76,8 +76,8 @@ public class CheckDigit{
         //the value of X as a char is 88, so this converts the X value to an integer value of 10 instead
     }
     else if(lastInt >= 48 && lastInt <= 57 ){
-        multiChar = Character.getNumericValue(lastChar);
-        //if the check digit is anywhere from 0 to 9, it just casts to that integer
+        multiChar = lastInt - 48;
+        //if the check digit is anywhere from 0 to 9, it takes the value of the ASCII character and subtracts 48 to get to the actual integer
     }
     else{
         System.out.println("Your last character in your barcode is invalid.");
