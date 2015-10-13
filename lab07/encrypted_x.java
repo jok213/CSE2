@@ -43,7 +43,6 @@ while (!acceptable) {
         else if (input < 0 || input > 100) {
         System.out.println("   ERROR: your input is not from 0 to 100");
         System.out.print("Please enter a number from 0 to 100: ");
-        input = 0; //resets the input value
         continue;
         //if the input lies outside of 0 to 100, an error message prompts for a new input, and the loop goes back to the beginning
         }    
