@@ -62,7 +62,7 @@ for(int i = 0; i < input; i++){
     //runs from 0 to the input, adding 1 each time
     //determines that the number of lines is equal to the input
     for(int j = 0; j < input; j++){
-        //runs from 0 to the unput, adding 1 each time
+        //runs from 0 to the input, adding 1 each time
         //determines that the amount of characters per line is equal to the input
         if (j == i || j == input - 1 - i) {
             star += " ";
