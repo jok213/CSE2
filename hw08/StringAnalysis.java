@@ -42,31 +42,61 @@ Scanner myScanner = new Scanner(System.in);
 System.out.print("Please enter the string that you would like to evaluate: ");
 String string = myScanner.next();
 
-System.out.print("Please enter the number of characters you would like to be examined in the string: ");
-int amount = myScanner.next();
+//prompt the user for the amount of characters to be examined
+System.out.print("Please enter the number of characters you would like to be examined in the string, or input 'all' to evaluate the entire string: ");
+String amount = myScanner.next();
 
-
-
-}
-
-    public static boolean all( String string ) {
-        for ( int i = 0, i <= string.length(), i++ )
-            if ( boolean isLetter(string.charAt(i)) ) {
-                return true;
-            }
-            else if ( !isLetter(string.charAt(i)) ) {
-                return false;
-            }
+boolean acceptable = false;
+while (!acceptable) { //this loop runs until acceptable becomes true
+    if ( amount.equals("all") ) {
+        System.out.println( all(string) );
+        acceptable = true;
+        //prints the truth values of the characters by calling the all method
     }
-    
-    public static boolean some( String string, int amount ) {
-        for ( int i = 0, i <= amount, i++) {
+    else {  
+            try {
+            int.parseInt(string);
+            acceptable = true;
+            amount = int.parseInt(amount);
+            System.out.println( some(string, amount) );
+            //if the string is parsable into an integer, the loop is exited by changing the boolean to true, and the integer is recorded
+            //prints the truth values of the characters by calling the some method
+            } catch (NumberFormatException e) {
+            System.out.println("   ERROR: You must enter an integer or 'all' ");
+                System.out.print("Please enter the number of characters you would like to be examined in the string, or input 'all' to evaluate the entire string: ");
+                amount = myScanner.next();
+            //if the string is not parsable into a double, an error message occurs and the user is reprompted  
+            } 
+        }
+}        
+
+} //end of main method
+
+    //this method returns a boolean when the entire string is evaluated
+    public static boolean all( String string ) { //returns a boolean and takes a string
+        for ( int i = 0, i <= string.length(), i++ ) { //this loop runs until it reaches the number of characters in the string
             if ( boolean isLetter(string.charAt(i)) ) {
                 return true;
+                //if the character being evaluated is a letter, the method returns true
             }
             else if ( !isLetter(string.charAt(i)) ) {
                 return false;
+                //if the character being evaluated is not a letter, the method returns false
             }
         }
-    }
+    } //end of method    
+    
+    //this method returns a boolean when a certain number of characters in the string is being evaluated
+    public static boolean some( String string, int amount ) { //returns a boolean and takes a string and an integer
+        for ( int i = 0, i <= amount, i++ ) { //this loop runs until it reaches the number of characters desired
+            if ( boolean isLetter(string.charAt(i)) ) {
+                return true;
+                //if the character being evaluated is a letter, the method returns true
+            }
+            else if ( !isLetter(string.charAt(i)) ) {
+                return false;
+                //if the character being evaluated is not a letter, the method returns false
+            }
+        }
+    } //end of method
 }
