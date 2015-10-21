@@ -55,9 +55,9 @@ while (!acceptable) { //this loop runs until acceptable becomes true
     }
     else {  
             try {
-            int.parseInt(string);
+            Integer.parseInt(string);
             acceptable = true;
-            amount = int.parseInt(amount);
+            amount = Integer.parseInt(amount);
             System.out.println( some(string, amount) );
             //if the string is parsable into an integer, the loop is exited by changing the boolean to true, and the integer is recorded
             //prints the truth values of the characters by calling the some method
