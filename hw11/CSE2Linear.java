@@ -108,7 +108,7 @@ public static void linearSearch(int key, int[] grades) {
 		}
     }
     if (!found) {
-        System.out.println(key + " was not found in the list with " +(i)+ " iterations.");
+        System.out.println(key + " was not found in the list with " +(i-1)+ " iterations.");
         //if the previous loop runs without changing the boolean to true, meaning the key was not found,
         //then print that it was not found with the amount of iterations i (from the previous loop)
     }
