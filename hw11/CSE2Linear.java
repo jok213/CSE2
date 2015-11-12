@@ -86,8 +86,8 @@ int[] grades = new int[15];
     //prompt user to enter a grade that will be searched:
     System.out.print("Enter a grade to search for: ");
     int key = myScanner.nextInt(); //accepts grade to be searched
-    linearSearch(key, grades); //calls method that searches linearly for it
-    shuffle(grades); //calls method that randomly shuffles the grades
+    binarySearch(key, grades); //calls method that conducts a binary search for it
+    scramble(grades); //calls method that randomly shuffles the grades
     System.out.print("Enter a grade to search for: "); //prompts user to enter a grade that will be searched
     int key2 = myScanner.nextInt(); //accepts grade to be searched
     linearSearch(key2, grades); //calls method that searches linearly for it
@@ -100,7 +100,7 @@ public static void linearSearch(int key, int[] grades) {
     boolean found = false; //declare a boolean that will allow the loop to be exited
     for (i=0; i<grades.length; i++) { //this for loop will search every element of the array
         if (grades[i] == key) {
-		    System.out.println(key + " was found in the list with " +i+ " iterations.");
+		    System.out.println(key + " was found in the list with " +(i+1)+ " comparisons.");
 		    found = true;
 		    break;
 		    //if the element of the array is equal to the key, print that it has been found with the amount of iterations i
@@ -108,14 +108,14 @@ public static void linearSearch(int key, int[] grades) {
 		}
     }
     if (!found) {
-        System.out.println(key + " was not found in the list with " +(i-1)+ " iterations.");
+        System.out.println(key + " was not found in the list with " +i+ " comparisons.");
         //if the previous loop runs without changing the boolean to true, meaning the key was not found,
         //then print that it was not found with the amount of iterations i (from the previous loop)
     }
 
 }
 
-public static int[] shuffle(int[] grades) {
+public static int[] scramble(int[] grades) {
       //method that takes an array of ints and returns an array of scrambled elements
       System.out.println("Scrambled:");
       //prints "Scrambled:"
@@ -136,5 +136,32 @@ public static int[] shuffle(int[] grades) {
     return grades;
     //returns the new array of shuffled cards
 }  //end of method
+
+public static void binarySearch(int key, int[] grades) {
+    //declare variables for binary search
+int low = 0; //low end of the search
+int high = grades.length - 1; //high end of the search starts at the end of the array
+int middle = 0; //middle of the search
+int i = 1;
+        while(high >= low) { //loop runs while the top of the search is greater than the bottom of the search
+                middle = (low + high) / 2; //middle of the search is the middle of the elements
+                if(grades[middle] == key) { //if the middle being searched matches the integer, print that it was found and exit the loop
+                    System.out.println(key + " was found in the list with " +i+ " comparisons.");
+                    break; //exits the loop
+                }
+                if(grades[middle] < key) { //if the middle of the search is less than the integer, change the low end of the search to one above the middle
+                    low = middle + 1;
+                } //search again
+                if(grades[middle] > key) { //if the middle of the search is greater than the integer, change the high end of the search to one below the middle
+                    high = middle - 1;
+                } //search again
+                i++;
+            }
+            if(grades[middle] != key) {
+                System.out.println(key + " was not found in the list with " +i+ " comparisons.");
+                //if the integer wasn't found in the loop, it prints that it wasn't found, and the integers above and below it
+            }
+
+  } //end of method
 
 } //end of class
