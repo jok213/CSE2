@@ -84,11 +84,11 @@ int[] grades = new int[15];
       System.out.println(""); //prints blank line
     
     //prompt user to enter a grade that will be searched:
-    System.out.print("Enter a grade to search for: ");
+    System.out.print("Enter a grade to binary search for: ");
     int key = myScanner.nextInt(); //accepts grade to be searched
     binarySearch(key, grades); //calls method that conducts a binary search for it
     scramble(grades); //calls method that randomly shuffles the grades
-    System.out.print("Enter a grade to search for: "); //prompts user to enter a grade that will be searched
+    System.out.print("Enter a grade to linear search for: "); //prompts user to enter a grade that will be searched
     int key2 = myScanner.nextInt(); //accepts grade to be searched
     linearSearch(key2, grades); //calls method that searches linearly for it
     
